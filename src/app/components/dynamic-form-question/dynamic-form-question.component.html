@@ -21,6 +21,22 @@
         [value]="opt.key"
       >{{opt.value}}</option>
     </select>
+
+    <div *ngSwitchCase="'radio'" >
+
+      <div *ngFor="let opt of question.options">
+
+          <label [attr.for]="opt.key">{{opt.label}}</label>
+          <input
+            [type]="opt.type"
+            [formControlName]="opt.key"
+            [value]="opt.value"
+            [name]="opt.key"
+          >
+
+      </div>
+
+    </div>
  
   </div> 
  
