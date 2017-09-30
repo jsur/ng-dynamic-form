@@ -1,6 +1,21 @@
 <div [formGroup]="form">
 
   <label [attr.for]="question.key">{{question.label}}</label>
+
+  <div [ngSwitch]="question.type">
+
+    <!-- This one from question.type -->
+
+      <input 
+        *ngSwitchCase="'text'" 
+        [formControlName]="question.key"
+        [id]="question.key"
+        [type]="question.type"
+      >    
+
+  </div>
+
+  <!-- The rest from question.controlType, probably not necessary -->
  
   <div [ngSwitch]="question.controlType">
  
@@ -29,7 +44,7 @@
           <label [attr.for]="opt.key">{{opt.label}}</label>
           <input
             [type]="opt.type"
-            [formControlName]="opt.key"
+            [formControlName]="question.key"
             [value]="opt.value"
             [name]="opt.key"
           >

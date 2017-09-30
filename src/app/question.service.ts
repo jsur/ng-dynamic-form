@@ -14,6 +14,17 @@ export class QuestionService {
 
    let questions: QuestionBase<any>[] = [
 
+    // first one without a question type
+    
+    {
+      type: 'text',
+      key: 'test',
+      label: 'Test',
+      value: 'testing',
+      required: true,
+      order: 1
+    },
+
      new DropdownQuestion({
        key: 'brave',
        label: 'Bravery Rating',
@@ -52,13 +63,16 @@ export class QuestionService {
      new RadioQuestion({
        key: 'gender',
        label: 'Gender',
+       value: 'female',
        options: [
-         { key: 'gender', type: 'radio', value: 'male', label: 'Male'},
-         { key: 'gender', type: 'radio', value: 'female', label: 'Female'}
+         { type: 'radio', value: 'male', label: 'Male'},
+         { type: 'radio', value: 'female', label: 'Female'}
        ],
-       order: 4
+       order: 5
      })
    ];
+
+   console.log(questions);
 
    return questions.sort((a, b) => a.order - b.order);
  }
