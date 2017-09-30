@@ -20,9 +20,9 @@ export class QuestionService {
       type: 'text',
       key: 'test',
       label: 'Test',
-      value: 'testing',
+      value: 'testingeeeeeeee',
       required: true,
-      order: 1
+      order: 0
     },
 
      new DropdownQuestion({
